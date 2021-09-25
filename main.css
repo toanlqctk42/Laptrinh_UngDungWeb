@@ -1,0 +1,19 @@
+#aboutme {
+    height: 200px;
+    width: 200px;
+    background: #6B8E23;
+}
+
+.container {
+    background-color: #FFF5EE;
+}
+.fix_ul_li {
+    list-style: none;
+}
+#fiximgcamping {
+    width: 50%;
+    height: 30%;
+}
+.fixicon {
+    margin-right: 10px;
+}

@@ -8,15 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="main.css">
+  npm i 
   <style>
   .fakeimg {
     height: 200px;
     width: 200px;
     background: #aaa;
-  }
-  .nav-item {
-    border: 50px;
-    color: white;
   }
   </style>
 </head>
@@ -24,10 +23,11 @@
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <h1>Tổng Hợp bài lab Môn Lập Phát triển ứng dụng Web</h1>
-  <p>Resize this responsive page to see the effect!</p> 
+  <p>Wellcome to my website!</p> 
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -64,36 +64,34 @@
     <div class="col-sm-4">
       <h2>About Me</h2>
       <h5>Photo of me:</h5>
-      <div class="fakeimg">
+      <div id="aboutme" class="fakeimg">
         <img src="image/176977863_1168512003610638_2377373113954509724_n.jpg" alt="" width="100%" height="100%">
       </div>
-      <p>MSSV : 1812856 </p>
-      <h3>Tổng hợp bài Lab</h3>
-      <ul class="nav nav-pills flex-column">
-        <!-- <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li> -->
-      <!-- <ul><h4>Lab01</h4>
-        <p>Bài 1</p> -->
-        <li class="nav-item">
-          <a class="nav-link" href="#"><Link></Link></a>
-        </li>
-      </ul>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
+      <br/>
+      <div class="fix_ul_li">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <p>Name : Lê Quốc Toàn</p>
+          </li>
+        </ul>
+          <li class="nav-item">
+            <p>Student Code : 1812856</p>
+          </li>
+          <li class="nav-item">
+            <p>Class : CTK42</p>
+          </li>
+        </ul>
+      </div>
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h2>Camping Trip</h2>
+      <div id="fiximgcamping" class="fakeimg">
+        <img src="image/KS202197.jpg" alt="" width="100%" height="100%">
+      </div>
+      <br>
+      <p>Người chụp ảnh là Photographer</p>
+      <p>Còn anh thì muốn là người yêu em cơ !! </p>
       <br>
       <h2>TITLE HEADING</h2>
       <h5>Title description, Sep 2, 2017</h5>
@@ -105,7 +103,7 @@
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Footer</p>
+  <a href="https://www.facebook.com/le.quoctoan.3551/"><i class="bi bi-facebook"></i></a>
 </div>
 
 </body>
