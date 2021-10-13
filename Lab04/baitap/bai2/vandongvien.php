@@ -29,6 +29,29 @@ class vandongvien{
         $this->cannang = $canNang;
         $this->chieucao = $chieuCao;
     }
+
+    public static function xuat($vandongvien)
+    {
+        echo $vandongvien->hoten."|".$vandongvien->tuoi."|".$vandongvien->monthidau."|".$vandongvien->cannang."|".$vandongvien->chieucao;
+    }
+
+    public static function sosanh($vandongvien1,$vandongvien2)
+    {
+        if($vandongvien1->chieucao > $vandongvien2->chieucao){
+            return true;
+        }
+        else if($vandongvien1->chieucao == $vandongvien2->chieucao){
+            if($vandongvien1->cannang > $vandongvien2->cannang){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
 }
 
 ?>
