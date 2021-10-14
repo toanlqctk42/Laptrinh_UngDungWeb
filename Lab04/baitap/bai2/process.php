@@ -35,6 +35,7 @@ else{
                         exit();
                     }
                     $sophantu = $_SESSION['sophantu'];
+                    
                     for ($i =0 ; $i < $sophantu; $i++)
                     {
                      echo '<label for="">Vận động viên '.($i+1).'</label>
@@ -43,6 +44,7 @@ else{
                      <input type="text" name="monthidau" id="monthidau" placeholder="nhập môn thi đấu">
                      <input type="double" name="cannang" id="cannang" placeholder="nhập cân nặng">
                      <input type="double" name="chieucao" id="chieucao" placeholder="nhập chiều cao"><br/>';
+                     
                     }
                     
                 }
