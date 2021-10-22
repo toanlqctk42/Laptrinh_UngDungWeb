@@ -7,12 +7,12 @@
   </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="d17b4477-4ce6-4d48-8644-b45881b7099c" name="PHP" home="E:\xampp\php\php.exe" debugger_id="php.debugger.XDebug" debugger_extension="E:\xampp\php\ext\php_xdebug-3.1.0-8.0-vs16-x86_64.dll" />
+      <interpreter id="d17b4477-4ce6-4d48-8644-b45881b7099c" name="PHP (project level)" home="E:\xampp\php\php.exe" debugger_id="php.debugger.XDebug" debugger_extension="E:\xampp\php\ext\php_xdebug-3.1.0-8.0-vs16-x86_64.dll" />
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
-      <interpreter name="PHP">
+      <interpreter name="PHP (project level)">
         <phpinfo binary_type="PHP" php_cgi="E:\xampp\php\php-cgi.exe" php_cli="E:\xampp\php\php.exe" path_separator=";" version="8.0.11">
           <additional_php_ini />
           <configuration_file>E:\xampp\php\php.ini</configuration_file>
@@ -20,7 +20,7 @@
             <configuration_option name="include_path" value="E:\xampp\php\PEAR" />
           </configuration_options>
           <debuggers>
-            <debugger_info debugger="xdebug" debugger_version="3.1.0">
+            <debugger_info debugger="xdebug" debugger_version="3.1.1">
               <debug_extensions />
             </debugger_info>
           </debuggers>
@@ -69,7 +69,7 @@
       </interpreter>
     </phpInfoCache>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
   <component name="PhpRuntimeConfiguration">
     <extensions>
       <extension name="FFI" enabled="true" />

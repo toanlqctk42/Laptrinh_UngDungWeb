@@ -7,8 +7,10 @@
     <title>Lê Quốc Toàn</title>
 </head>
 <body>
-<?php 
+<?php
+/** @var int $ketqua */
 $ketqua = "";
+
  if(isset($_REQUEST["cmdtinh"]))
  {
      $so_a = $_REQUEST["so_a"];
@@ -36,7 +38,7 @@ $ketqua = "";
             }
            $ketqua = "$so_a / $so_b = ".($so_a / $so_b);
             break;
-     };
+     }
      echo '<label for="ketqua"> Kết Quả = </label>'.$ketqua.'<br/>';
  }
 ?>

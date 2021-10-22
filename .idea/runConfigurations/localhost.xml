@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="localhost" type="PhpLocalRunConfigurationType" factoryName="PHP Console" editBeforeRun="true" singleton="false" path="$PROJECT_DIR$/Lab02/Baitap/bai2/ketquapheptinh.php">
+    <CommandLine>
+      <PhpTestInterpreterSettings>
+        <option name="interpreterName" value="PHP" />
+      </PhpTestInterpreterSettings>
+    </CommandLine>
+    <method v="2" />
+  </configuration>
+</component>
