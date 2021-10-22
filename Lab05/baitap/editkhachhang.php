@@ -86,8 +86,10 @@
                     <input type="text" class="form-control" value="<?php echo $khachhang['email']; ?>" id="email"
                         name="email">
                 </div>
-                <button type="submit" class="btn btn-primary">Thêm</button>
-                <button type="button" class="btn btn-primary" onclick="javascript:history.back(1)">Quay lại</button>
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                    <button type="button" class="btn btn-primary" onclick="javascript:history.back(1)">Quay lại</button>
+                </div>
             </form>
         </div>
     </div>
