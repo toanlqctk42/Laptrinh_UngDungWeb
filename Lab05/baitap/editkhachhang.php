@@ -31,7 +31,7 @@
 <body>
     <div class="container mt-3">
         <div class="row justify-content-center">
-            <h2 class="text-center">Thêm Khách Hàng mới</h2>
+            <h2 class="text-center">Cập Nhật Khách Hàng</h2>
             <p><a href="index.php">Home</a></p>
             <form action="" method="post">
                 <div class="form-group mt-2">

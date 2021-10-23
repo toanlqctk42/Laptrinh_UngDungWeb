@@ -3,6 +3,8 @@
 <?php 
   include 'hangsua.php';
   include 'khachhang.php';
+  include 'sanpham.php';
+  include 'loaisua.php';
   ?>
 
 <head>
@@ -68,7 +70,8 @@
 
                 </div>
                 <div class="tab-pane" id="profile" role="tabpanel">
-                    <h3 class="text-center">Xem Danh Sách Khách Hàng </h3><a class="btn btn-primary" href="addkhachhang.php">Thêm khách hàng</a>
+                    <h3 class="text-center">Xem Danh Sách Khách Hàng </h3><a class="btn btn-primary"
+                        href="addkhachhang.php">Thêm khách hàng</a>
                     <table class="table table-bordered table-hover">
                         <thead class="table-dark">
                             <tr>
@@ -83,8 +86,8 @@
                         </thead>
                         <tbody>
                             <?php 
-                $hs = new khachhang("milkstory");
-                $result = $hs->GetAll();
+                $kh = new khachhang("milkstory");
+                $result = $kh->GetAll();
                 while ($row =mysqli_fetch_array($result))
                 {
                    echo"<tr>";
@@ -111,7 +114,48 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="tab-pane" id="messages" role="tabpanel">Xem Sản Phẩm</div>
+                <div class="tab-pane" id="messages" role="tabpanel">
+                    <h3 class="text-center">Xem Sản Phẩm </h3><a class="btn btn-primary" href="addsanpham.php">Thêm
+                        Sản Phẩm</a>
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên Sữa</th>
+                                <th>Hãng Sữa</th>
+                                <th>Loại Sữa</th>
+                                <th>Trọng Lượng</th>
+                                <th>Đơn Giá</th>
+                                <th>E/D</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                $sp = new sanpham("milkstory");
+                $result = $sp->GetAll();
+                while ($row =mysqli_fetch_array($result))
+                {
+                    echo"<tr>";
+                    echo"<td>".$row['masua']."</td>";
+                    echo"<td>".$row['tensua']."</td>";
+                    $has = new hangSua("milkstory");
+                    $hangsua= $has->GetByID($row['mahs']);
+                    echo"<td>".$hangsua['tenhangsua']."</td>";
+                    $ls = new loaisua("milkstory");
+                    $loaisua= $ls->GetByID($row['maloaisua']);
+                    echo"<td>".$loaisua['tenloaisua']."</td>";
+                    echo"<td>".$row['trongluong']."</td>";
+                    echo"<td>".$row['dongia']."</td>";
+                    echo"<td>
+                        <a href=''><i class='fas fa-edit'></i></a>
+                        <a href='delsanpham.php?masua=".$row['masua']."'><i class='far fa-trash-alt'></i></a>
+                        </td>";
+                    echo"</tr>";
+                }
+                ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
