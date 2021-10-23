@@ -52,19 +52,19 @@
                         </thead>
                         <tbody>
                             <?php 
-                $hs = new hangSua("milkstory");
-                $result = $hs->GetAll();
-                while ($row =mysqli_fetch_array($result))
-                {
-                   echo"<tr>";
-                   echo"<td>".$row['mahs']."</td>";
-                   echo"<td>".$row['tenhangsua']."</td>";
-                   echo"<td>".$row['diachi']."</td>";
-                   echo"<td>".$row['dienthoai']."</td>";
-                   echo"<td>".$row['email']."</td>";
-                   echo"</tr>";
-                }
-                ?>
+                                $hs = new hangSua("milkstory");
+                                $result = $hs->GetAll();
+                                while ($row =mysqli_fetch_array($result))
+                                {
+                                echo"<tr>";
+                                echo"<td>".$row['mahs']."</td>";
+                                echo"<td>".$row['tenhangsua']."</td>";
+                                echo"<td>".$row['diachi']."</td>";
+                                echo"<td>".$row['dienthoai']."</td>";
+                                echo"<td>".$row['email']."</td>";
+                                echo"</tr>";
+                                }
+                            ?>
                         </tbody>
                     </table>
 
@@ -86,31 +86,31 @@
                         </thead>
                         <tbody>
                             <?php 
-                $kh = new khachhang("milkstory");
-                $result = $kh->GetAll();
-                while ($row =mysqli_fetch_array($result))
-                {
-                   echo"<tr>";
-                   echo"<td>".$row['makh']."</td>";
-                   echo"<td>".$row['tenkh']."</td>";
-                   if($row['gioitinh']==1)
-                   {
-                    echo'<td><i class="fas fa-male"></i></td>';
-                   }
-                   else 
-                   {
-                    echo'<td><i class="fas fa-female"></i></td>';
-                   }
-                   echo"<td>".$row['diachi']."</td>";
-                   echo"<td>".$row['dienthoai']."</td>";
-                   echo"<td>".$row['email']."</td>";
-                   echo"<td>
-                    <a href='editkhachhang.php?makh=".$row['makh']."'><i class='fas fa-edit'></i></a>
-                    <a href='delkhachhang.php?makh=".$row['makh']."'><i class='far fa-trash-alt'></i></a>
-                    </td>";
-                   echo"</tr>";
-                }
-                ?>
+                                $kh = new khachhang("milkstory");
+                                $result = $kh->GetAll();
+                                while ($row =mysqli_fetch_array($result))
+                                {
+                                echo"<tr>";
+                                echo"<td>".$row['makh']."</td>";
+                                echo"<td>".$row['tenkh']."</td>";
+                                if($row['gioitinh']==1)
+                                {
+                                    echo'<td><i class="fas fa-male"></i></td>';
+                                }
+                                else 
+                                {
+                                    echo'<td><i class="fas fa-female"></i></td>';
+                                }
+                                echo"<td>".$row['diachi']."</td>";
+                                echo"<td>".$row['dienthoai']."</td>";
+                                echo"<td>".$row['email']."</td>";
+                                echo"<td>
+                                    <a href='editkhachhang.php?makh=".$row['makh']."'><i class='fas fa-edit'></i></a>
+                                    <a href='delkhachhang.php?makh=".$row['makh']."'><i class='far fa-trash-alt'></i></a>
+                                    </td>";
+                                echo"</tr>";
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -131,28 +131,28 @@
                         </thead>
                         <tbody>
                             <?php 
-                $sp = new sanpham("milkstory");
-                $result = $sp->GetAll();
-                while ($row =mysqli_fetch_array($result))
-                {
-                    echo"<tr>";
-                    echo"<td>".$row['masua']."</td>";
-                    echo"<td>".$row['tensua']."</td>";
-                    $has = new hangSua("milkstory");
-                    $hangsua= $has->GetByID($row['mahs']);
-                    echo"<td>".$hangsua['tenhangsua']."</td>";
-                    $ls = new loaisua("milkstory");
-                    $loaisua= $ls->GetByID($row['maloaisua']);
-                    echo"<td>".$loaisua['tenloaisua']."</td>";
-                    echo"<td>".$row['trongluong']."</td>";
-                    echo"<td>".$row['dongia']."</td>";
-                    echo"<td>
-                        <a href=''><i class='fas fa-edit'></i></a>
-                        <a href='delsanpham.php?masua=".$row['masua']."'><i class='far fa-trash-alt'></i></a>
-                        </td>";
-                    echo"</tr>";
-                }
-                ?>
+                                $sp = new sanpham("milkstory");
+                                $result = $sp->GetAll();
+                                while ($row =mysqli_fetch_array($result))
+                                {
+                                    echo"<tr>";
+                                    echo"<td>".$row['masua']."</td>";
+                                    echo"<td>".$row['tensua']."</td>";
+                                    $has = new hangSua("milkstory");
+                                    $hangsua= $has->GetByID($row['mahs']);
+                                    echo"<td>".$hangsua['tenhangsua']."</td>";
+                                    $ls = new loaisua("milkstory");
+                                    $loaisua= $ls->GetByID($row['maloaisua']);
+                                    echo"<td>".$loaisua['tenloaisua']."</td>";
+                                    echo"<td>".$row['trongluong']."</td>";
+                                    echo"<td>".$row['dongia']."</td>";
+                                    echo"<td>
+                                        <a href='editsanpham.php?masua=".$row['masua']."'><i class='fas fa-edit'></i></a>
+                                        <a href='delsanpham.php?masua=".$row['masua']."'><i class='far fa-trash-alt'></i></a>
+                                        </td>";
+                                    echo"</tr>";
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

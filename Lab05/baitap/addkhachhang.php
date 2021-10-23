@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'khachhang.php'?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
     <div class="container mt-3">
         <div class="row justify-content-center">
             <h2 class="text-center">Thêm Khách Hàng mới</h2>
-            <p><a href="index.php">Home</a></p>
+            <p><a class="btn btn-primary" href="index.php">Home</a></p>
             <form action="" method="post">
                 <div class="form-group mt-2">
                     <label for="email">Mã Khách Hàng</label>
@@ -41,18 +42,20 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="pwd">Địa chỉ</label>
-                    <input type="text" class="form-control" id="diachi" name="diachi">
+                    <input type="text" class="form-control" id="diachi" name="diachi" placeholder="Địa chỉ">
                 </div>
                 <div class="form-group mt-2">
                     <label for="pwd">Điện Thoại</label>
-                    <input type="text" class="form-control" id="dienthoai" name="dienthoai">
+                    <input type="text" class="form-control" id="dienthoai" name="dienthoai" placeholder="điện thoại">
                 </div>
                 <div class="form-group mt-2">
                     <label for="pwd">Email</label>
-                    <input type="text" class="form-control" id="email" name="email">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="email">
                 </div>
+                <div class="form-group mt-2">
                     <button type="submit" class="btn btn-primary">Thêm</button>
                     <button type="button" class="btn btn-primary" onclick="javascript:history.back(1)">Quay lại</button>
+                </div>
             </form>
             <?php
             if(isset($_POST["makh"])){

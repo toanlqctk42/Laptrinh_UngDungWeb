@@ -21,15 +21,15 @@
 
         public function Update($masuaold,$masuanew,$tensua,$hangsua,$loaisua,$trongluong,$dongia,$thanhphan,$loiich,$hinhanh)
         {
-            $query = "update sua set masua = '$masuanew'
-                                    , tensua = '$tensua'
-                                    , hangsua = '$hangsua'
-                                    , loaisua = '$loaisua'
-                                    ,trongluong = $trongluong 
-                                    , dongia = $dongia 
-                                    , thanhphan = '$thanhphan'
-                                    ,loiich = '$loiich'
-                                    ,hinhanh = '$hinhanh' where masua = '$masuaold'";
+            $query ="update sua set masua = '$masuanew'
+            , tensua = '$tensua'
+            , mahs = '$hangsua'
+            , maloaisua = '$loaisua'
+            ,trongluong = $trongluong 
+            , dongia = $dongia 
+            , thanhphan = '$thanhphan'
+            ,loiich = '$loiich'
+            ,hinhanh = '$hinhanh' where masua = '$masuaold'";
             return $this->mysql-> MyQuery($query);
         }
 
