@@ -27,6 +27,7 @@
 
 <body>
     <?php
+
         $q = intval($_GET['q']);
         $con = new mysqli('localhost','root','','ajax_demo');
         if (!$con) {

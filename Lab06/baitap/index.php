@@ -69,7 +69,6 @@
                     alert('Vui lòng không để trống số ');
                 } else {
                     var reponse = new XMLHttpRequest();
-                        debugger;
                     reponse.open('GET', 'thucthi.php?so_a=' + soA + '&so_b=' + soB + '&pheptinh=' + pheptinh)
                     reponse.send();
                     reponse.onload = function() {
