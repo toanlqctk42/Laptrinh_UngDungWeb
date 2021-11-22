@@ -40,7 +40,8 @@ class departmentController{
         $dpm = new Department($this->Connection);
         $id = $_GET["id"];
         $Name = $_REQUEST["name"];
-        $dpm->UpdateDPM($id,$Name);
+        $NumberOfStaff = $_REQUEST["numberofstaff"];
+        $dpm->UpdateDPM($id,$Name,$NumberOfStaff);
         $this->index();
     }
 

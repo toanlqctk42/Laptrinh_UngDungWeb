@@ -17,20 +17,38 @@
     <div class="container">
         <div class="row justify-content-center">
             <form action="" method="POST">
-            <h1>Department-Edit</h1>
+                <h1>Employee-Add</h1>
                 <table class="table table-dark">
                     <tr>
-                        <td>ID</td>
-                        <td><input type="number" name="id_new" value="<?php echo $data["dpm"]->ID ?>" readonly> </td>
-                    </tr>
-                    <tr>
                         <td>Name</td>
-                        <td><input type="text" name="name" value="<?php echo $data["dpm"]->Name ?>"></td>
+                        <td><input type="text" name="name"></td>
                     </tr>
                     <tr>
-                        <td>NumberOfStaff</td>
-                        <td><input type="number" name="numberofstaff" value="<?php echo $data["dpm"]->NumberOfStaff ?>"
-                                ></td>
+                        <td>SurName</td>
+                        <td><input type="text" name="surname"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><input type="text" name="phone"></td>
+                    </tr>
+                    <tr>
+                        <td>Bộ Phận</td>
+                        <td>
+                            <select class="form-control" id="bophan" name="dpm_id">
+                                <?php 
+                                foreach($data['dpmList'] as $bophan)
+                                {
+                                    echo "<option value=".$bophan['ID'].">".$bophan['Name']."</option>";
+                                }
+                            ?>
+
+
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -46,14 +64,16 @@
                 $mode = $_REQUEST['submit'];
                 if($mode == "Huỷ")
                 {
-                    header("location:thucthi.php?banghienthi=dpm");
+                    header("location:thucthi.php?banghienthi=emp");
                     exit();
                 }
                 else{
-                    $id = $_REQUEST['id_new'];
                     $name = $_REQUEST['name'];
-                    $numberofstaff = $_REQUEST['numberofstaff'];
-                    header("Location:thucthi.php?banghienthi=dpm&action=update&id=$id&name=$name&numberofstaff=$numberofstaff");
+                    $surname =$_REQUEST['surname'];
+                    $email = $_REQUEST['email'];
+                    $phone = $_REQUEST['phone'];
+                    $dpm_id =$_REQUEST['dpm_id'];
+                    header("Location:thucthi.php?banghienthi=emp&action=insert&name=$name&surname=$surname&email=$email&phone=$phone&dpm_id=$dpm_id");
                 }
             }
             

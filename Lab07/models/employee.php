@@ -37,7 +37,7 @@ class Employee{
     {
         $sql = "CALL `proc_themnhanvienmoi`(:Name,:Surname,:Email,:Phone,:Depart_ID)";
         $cmd = $this->Conn->prepare($sql);
-        $result = $cmd->execute(array('Name'=>$name, 'Surname'=>$surname,'Email'=>$email,'Phone'=>$phone,'Depart_ID'=>$depart_ID));
+        $result = $cmd->execute(array("Name"=>$name, "Surname"=>$surname,"Email"=>$email,"Phone"=>$phone,"Depart_ID"=>$depart_ID));
         $result = $cmd -> fetchObject();
         $this->Conn= null;
         return $result;

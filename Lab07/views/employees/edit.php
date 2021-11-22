@@ -30,7 +30,7 @@
                     <tr>
                         <td>NumberOfStaff</td>
                         <td><input type="number" name="numberofstaff" value="<?php echo $data["dpm"]->NumberOfStaff ?>"
-                                ></td>
+                                readonly></td>
                     </tr>
                     <tr>
                         <td>
@@ -52,8 +52,7 @@
                 else{
                     $id = $_REQUEST['id_new'];
                     $name = $_REQUEST['name'];
-                    $numberofstaff = $_REQUEST['numberofstaff'];
-                    header("Location:thucthi.php?banghienthi=dpm&action=update&id=$id&name=$name&numberofstaff=$numberofstaff");
+                    header("Location:thucthi.php?banghienthi=dpm&action=update&id=$id&name=$name");
                 }
             }
             
