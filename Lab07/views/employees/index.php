@@ -5,12 +5,13 @@
     <meta charset="utf-8" />
     <title>Example PHP+PDO+POO+MVC</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/0c397bfc39.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
         <h2>Employee List</h2>
-        <p>Danh sách các User hiện có | <a href="views/addemp.php">Thêm mới</a> </p>
+        <p>Danh sách các User hiện có </p>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -27,21 +28,28 @@
                 <?php
             foreach($data["empList"] as $List){
             ?>
-                            <tr>
-                                <td><?php echo $List["ID"] ?></td>
-                                <td><?php echo $List["Name"] ?></td>
-                                <td><?php echo $List["Surname"] ?></td>
-                                <td><?php echo $List["Email"] ?></td>
-                                <td><?php echo $List["Phone"] ?></td>
-                                <td>
-                                    <a href="index.php?action=detail&id=<?php echo $List["ID"]?>">Detail</a>
-                                </td>
-                            </tr>
-                            <?php
+                <tr>
+                    <td><?php echo $List["ID"] ?></td>
+                    <td><?php echo $List["Name"] ?></td>
+                    <td><?php echo $List["Surname"] ?></td>
+                    <td><?php echo $List["Email"] ?></td>
+                    <td><?php echo $List["Phone"] ?></td>
+                    <td><?php echo $List["ID_Depart"] ?></td>
+                    <td>
+                        <a href="thucthi.php?banghienthi=emp&action=detail&id=<?php echo $List["ID"]?>">Detail</a>
+                        <a href="thucthi.php?banghienthi=emp&action=edit&id=<?php echo $List["ID"]?>"><i
+                                class="fas fa-edit"></i></a>
+                        <a href="thucthi.php?banghienthi=emp&action=delete&id=<?php echo $List["ID"]?>"><i
+                                class='far fa-trash-alt'></i></a>
+                    </td>
+                </tr>
+                <?php
             }
             ?>
             </tbody>
+
         </table>
+        <button class="btn btn-primary"><a href="index.php" class="badge badge-primary">Home</a></button>
     </div>
 </body>
 

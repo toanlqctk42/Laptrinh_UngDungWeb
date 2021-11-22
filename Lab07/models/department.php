@@ -32,11 +32,33 @@ class Department{
 
     public function InsertDPM($Name)
     {
-        $sql = "INSERT INTO Departments values(:Name,'0')";
+        $sql = "CALL `proc_thembophanmoi`(:Name)";
         $cmd = $this->Conn->prepare($sql);
-        if($cmd->execute(array($Name)))
-            return true;
-        return false;
+        $cmd->execute(array('Name' => $Name));
+        $result = $cmd->fetchObject();
+        $this->Conn = null;
+        return $result;
     }
+
+    public function UpdateDPM($id,$Name)
+    {
+        $sql = "CALL `proc_suabophan`(:id, :Name)";
+        $cmd = $this->Conn->prepare($sql);
+        $cmd->execute(array('id'=>$id,'Name' => $Name));
+        $result = $cmd->fetchObject();
+        $this->Conn = null;
+        return $result;
+    }
+
+    public function DeleteDPM($id)
+    {
+        $sql = "CALL `proc_xoabophan`(:id)";
+        $cmd = $this->Conn->prepare($sql);
+        $cmd->execute(array('id'=>$id));
+        $result = $cmd->fetchObject();
+        $this->Conn = null;
+        return $result;
+    }
+
 }
 ?>

@@ -1,18 +1,24 @@
 <?php
-
-    if(!isset($_GET['chon']))
-    echo 'hello';
-    else echo 'fall';
-    // require_once 'controllers/employeeController.php';
-    // $controller = new EmployeeController();
-    // if(!isset($_GET["action"]))
-    // $controller ->run("index");
-    // else
-    // $controller ->run("detail");
-    // require_once 'controllers/employeeController.php';
-    // $controller = new EmployeeController();
-    // if(!isset($_GET["action"]))
-    // $controller ->run("index");
-    // else
-    // $controller ->run("detail");
+    $hienthi = $_REQUEST['banghienthi'];
+    if($hienthi == "dpm") {
+        require_once 'controllers/departmentController.php';
+        $controller = new departmentController();
+        if(!isset($_GET["action"])){
+            $controller ->run("index");
+        }else
+        {
+            $action = $_GET["action"];
+            $controller ->run($action);
+        }
+    }else if($hienthi == "emp"){
+        require_once 'controllers/employeeController.php';
+        $controller = new EmployeeController();
+        if(!isset($_GET["action"])){
+            $controller ->run("index");
+        }else
+        {
+            $action = $_GET["action"];
+            $controller ->run($action);
+        }
+    }
 ?>

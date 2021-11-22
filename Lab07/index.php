@@ -15,7 +15,7 @@
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <form method="POST" action="">
+            <form method="GET" action="thucthi.php">
                 <div class="form-group">
                     <label for="chonbanghienthi">Chọn bảng hiển thị</label>
                     <select class="form-control" id="chonbanghienthi" name="banghienthi">
@@ -24,28 +24,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button name="thucthi" onclick="thucthi()">Xem Bảng</button>
+                    <button type="submit" class="btn-primary" >Xem Bảng</button>
                 </div>
             </form>
-            <div id ="kq"></div>
+            <div id="kq"></div>
         </div>
     </div>
 
-    <script>
-    function thucthi() {
-        var e = document.getElementById("chonbanghienthi");
-        var strUser = e.options[e.selectedIndex].value;
-        alert(strUser);
-        var response = new XMLHttpRequest();
-        response.open('GET','thucthi.php?chon='+strUser)
-        response.send();
-        response.onload = function(){
-          if(this.status == 200 && this.readyState==4){
-            document.getElementById("kq").innerHTML = this.responseText;
-          }
-        };
-    }
-    </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

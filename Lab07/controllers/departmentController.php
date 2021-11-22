@@ -29,12 +29,33 @@ class departmentController{
         $this->view("detail",array("dpm"=>$dpmObj,"title" =>"MVC Obj"));
     }
 
+    public function Edit(){
+        $dpm = new Department($this->Connection);
+        $id = $_GET["id"];
+        $dpmObj= $dpm->getByID($id);
+        $this->view("edit",array("dpm"=>$dpmObj,"title" =>"MVC Obj"));
+    }
+
+    public function Update(){
+        $dpm = new Department($this->Connection);
+        $id = $_GET["id"];
+        $Name = $_REQUEST["name"];
+        $dpm->UpdateDPM($id,$Name);
+        $this->index();
+    }
+
     public function insert(){
         $dpm = new Department($this->Connection);
-        $Name = $_POST["name"];
-        $dpmObj = $dpm->InsertDPM($Name);
+        $Name = $_REQUEST["name"];
+        $dpm->InsertDPM($Name);
         $this->index();
+    }
 
+    public function Delete(){
+        $dpm = new Department($this->Connection);
+        $id = $_REQUEST["id"];
+        $dpm->DeleteDPM($id);
+        $this->index();
     }
 
     public function run($action){
@@ -47,6 +68,15 @@ class departmentController{
                 break;
             case "insert":
                 $this->insert();
+                break;
+            case "edit":
+                $this->edit();
+                break;
+            case "update":
+                $this->update();
+                break;
+            case "delete":
+                $this->delete();
                 break;
         }
     }

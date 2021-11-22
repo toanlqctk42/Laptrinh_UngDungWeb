@@ -35,10 +35,32 @@ class Employee{
 
     public function InsertEMP($name, $surname, $email, $phone ,$depart_ID)
     {
-        $sql = "INSERT INTO employees values(:name, :surname, :email, :phone,:depart_ID)";
+        $sql = "CALL `proc_themnhanvienmoi`(:Name,:Surname,:Email,:Phone,:Depart_ID)";
         $cmd = $this->Conn->prepare($sql);
-        $result = $cmd->execute(array($name,$surname,$email,$phone,$depart_ID));
+        $result = $cmd->execute(array('Name'=>$name, 'Surname'=>$surname,'Email'=>$email,'Phone'=>$phone,'Depart_ID'=>$depart_ID));
+        $result = $cmd -> fetchObject();
         $this->Conn= null;
+        return $result;
+    }
+
+    public function UpdateEMP($id,$name, $surname, $email, $phone ,$depart_ID)
+    {
+        $sql = "CALL `proc_suanhanvien`(:id,:Name,:Surname,:Email,:Phone,:Depart_ID)";
+        $cmd = $this->Conn->prepare($sql);
+        $result = $cmd->execute(array('id'=>$id,'Name'=>$name, 'Surname'=>$surname,'Email'=>$email,'Phone'=>$phone,'Depart_ID'=>$depart_ID));
+        $result = $cmd -> fetchObject();
+        $this->Conn= null;
+        return $result;
+    }
+
+    public function DeleteEMP($id)
+    {
+        $sql = "CALL `proc_xoanhanvien`(:id)";
+        $cmd = $this->Conn->prepare($sql);
+        $result = $cmd->execute(array("id"=>$id));
+        $result = $cmd -> fetchObject();
+        $this->Conn= null;
+        return $result;
     }
 
 }
