@@ -40,11 +40,11 @@ class Department{
         return $result;
     }
 
-    public function UpdateDPM($id,$Name,$numberofstaff)
+    public function UpdateDPM($id,$Name,$NumberOfStaff)
     {
-        $sql = "CALL `proc_suabophan`(:id, :Name,:NumberOfStaff)";
+        $sql = "CALL `proc_suabophan`(:id, :Name, :NumberOfStaff)";
         $cmd = $this->Conn->prepare($sql);
-        $cmd->execute(array('id'=>$id,'Name' => $Name,'NumberOfStaff'=>$numberofstaff));
+        $cmd->execute(array('id'=>$id,'Name' => $Name,'NumberOfStaff'=>$NumberOfStaff));
         $result = $cmd->fetchObject();
         $this->Conn = null;
         return $result;

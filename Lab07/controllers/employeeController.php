@@ -44,9 +44,8 @@ class EmployeeController
         $emp = new Employee($this->Connection);
         $dpm = new Department($this->Connection);
         $emp_id = $_GET["emp_id"];
-        $dpm_id = $_GET["dpm_id"];
         $empObj = $emp->getByID($emp_id);
-        $dpmObj = $dpm->getByID($dpm_id);
+        $dpmObj = $dpm->getall();
         $this->view("edit", array("emp" => $empObj,"dpm" => $dpmObj, "title" => "MVC Obj"));
     }
 
@@ -60,13 +59,23 @@ class EmployeeController
         $dpm_id = $_GET["dpm_id"];
         $emp->InsertEMP($name,$surname,$email,$phone,$dpm_id);
         $dpmObj = $dpm->getbyId($dpm_id);
-        $numberofstaff = $dpmObj["NumberOfStaff"]->NumberOfStaff;
-        $dpm->UpdateDPM($dpmObj["ID"],$dpmObj["Name"],$numberofstaff+1);
+        $dpminsert= new Department($this->Connection);
+        $name = $dpmObj->Name;
+        $numberofstaff = $dpmObj->NumberOfStaff +1;
+        $dpminsert->UpdateDPM($dpm_id,$name,$numberofstaff);
         $this->index();
     }
 
     public function update(){
-
+        $emp = new Employee($this->Connection);
+        $id=$_REQUEST["emp_id"];
+        $name = $_GET["name"];
+        $surname = $_GET["surname"];
+        $email = $_GET["email"];
+        $phone = $_GET["phone"];
+        $dpm_id = $_GET["dpm_id"];
+        $emp->UpdateEMP($id,$name,$surname,$email,$phone,$dpm_id);
+        $this->index();
     }
 
     public function delete(){
@@ -74,9 +83,12 @@ class EmployeeController
         $dpm = new Department($this->Connection);
         $emp_id = $_GET["emp_id"];
         $emp->DeleteEMP($emp_id);
-        $dmp_id = $_GET["dmp_id"];
-        $dmpObj = $dpm->getbyId($dmp_id);
-        $dpm->UpdateDPM($dmpObj["ID"],$dmpObj["Name"],$dmpObj["NumberOfStaff"]-1);
+        $dpm_id = $_GET["dpm_id"];
+        $dpmObj = $dpm->getbyId($dpm_id);
+        $dpmdelete= new Department($this->Connection);
+        $name = $dpmObj->Name;
+        $numberofstaff = $dpmObj->NumberOfStaff -1;
+        $dpmdelete->UpdateDPM($dpm_id,$name,$numberofstaff);
         $this->index();
     }
 
