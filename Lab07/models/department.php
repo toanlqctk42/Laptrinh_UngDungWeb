@@ -35,9 +35,7 @@ class Department{
         $sql = "CALL `proc_thembophanmoi`(:Name)";
         $cmd = $this->Conn->prepare($sql);
         $cmd->execute(array('Name' => $Name));
-        $result = $cmd->fetchObject();
         $this->Conn = null;
-        return $result;
     }
 
     public function UpdateDPM($id,$Name,$NumberOfStaff)
@@ -45,9 +43,7 @@ class Department{
         $sql = "CALL `proc_suabophan`(:id, :Name, :NumberOfStaff)";
         $cmd = $this->Conn->prepare($sql);
         $cmd->execute(array('id'=>$id,'Name' => $Name,'NumberOfStaff'=>$NumberOfStaff));
-        $result = $cmd->fetchObject();
         $this->Conn = null;
-        return $result;
     }
 
     public function DeleteDPM($id)
@@ -55,9 +51,7 @@ class Department{
         $sql = "CALL `proc_xoabophan`(:id)";
         $cmd = $this->Conn->prepare($sql);
         $cmd->execute(array('id'=>$id));
-        $result = $cmd->fetchObject();
         $this->Conn = null;
-        return $result;
     }
 
 }
