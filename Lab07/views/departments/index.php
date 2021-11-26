@@ -11,7 +11,7 @@
 <body>
     <div class="container">
     <div id="kq">
-        <h2>Department List List</h2>
+        <h2>Department List</h2>
         <p>Danh sách các User hiện có </p>
         
             <table class="table table-bordered">
